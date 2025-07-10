@@ -1,12 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css"; // Asumimos que tendrás un archivo de estilos globales
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Fidelia MKT",
-  description: "Plataforma de lealtad para negocios.",
+  description: "Plataforma de lealtad",
 };
 
 export default function RootLayout({
@@ -16,7 +12,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={inter.className}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
