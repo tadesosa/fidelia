@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { ShieldCheck, BarChart2, Users, Gift, ArrowRight } from 'lucide-react';
 
 export default function HomePage() {
@@ -6,17 +7,19 @@ export default function HomePage() {
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 bg-white bg-opacity-90 backdrop-blur-sm z-50 border-b border-gray-200">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-indigo-600">Fidelia</h1>
+          <Link href="/" className="text-2xl font-bold text-indigo-600">Fidelia</Link>
           <nav className="hidden md:flex items-center space-x-8">
             <a href="#features" className="hover:text-indigo-600 transition-colors">Características</a>
             <a href="#how-it-works" className="hover:text-indigo-600 transition-colors">¿Cómo funciona?</a>
             <a href="#pricing" className="hover:text-indigo-600 transition-colors">Precios</a>
           </nav>
           <div className="flex items-center space-x-4">
-            <button className="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors">Iniciar Sesión</button>
-            <button className="bg-indigo-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-indigo-700 transition-transform hover:scale-105 shadow-sm">
+            <Link href="/login" className="text-indigo-600 font-semibold hover:text-indigo-800 transition-colors">
+              Iniciar Sesión
+            </Link>
+            <Link href="/signup" className="bg-indigo-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-indigo-700 transition-transform hover:scale-105 shadow-sm">
               Registrarse
-            </button>
+            </Link>
           </div>
         </div>
       </header>
@@ -32,9 +35,9 @@ export default function HomePage() {
               Fidelia es la plataforma todo-en-uno que te ayuda a premiar a tus clientes y a hacer crecer tu negocio con un sistema de puntos simple y poderoso.
             </p>
             <div className="mt-10 flex justify-center items-center gap-4">
-              <button className="bg-indigo-600 text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-indigo-700 transition-transform hover:scale-105 shadow-lg flex items-center gap-2">
+              <Link href="/signup" className="bg-indigo-600 text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-indigo-700 transition-transform hover:scale-105 shadow-lg flex items-center gap-2">
                 Crear cuenta de Local <ArrowRight size={20} />
-              </button>
+              </Link>
               <button className="text-indigo-600 font-semibold px-6 py-3">
                 Ver Demo
               </button>
@@ -120,9 +123,9 @@ export default function HomePage() {
               Únete a la nueva generación de negocios que crecen gracias a sus clientes recurrentes.
             </p>
             <div className="mt-8">
-              <button className="bg-white text-indigo-600 px-8 py-3 rounded-lg font-bold text-lg hover:bg-gray-100 transition-transform hover:scale-105 shadow-lg">
+              <Link href="/signup" className="bg-white text-indigo-600 px-8 py-3 rounded-lg font-bold text-lg hover:bg-gray-100 transition-transform hover:scale-105 shadow-lg">
                 Crear mi cuenta ahora
-              </button>
+              </Link>
             </div>
           </div>
         </section>

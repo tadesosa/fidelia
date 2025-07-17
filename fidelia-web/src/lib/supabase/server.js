@@ -9,25 +9,22 @@ export const createClient = () => {
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
     {
       cookies: {
-        get(name) {
+        // Hacemos que los métodos sean asíncronos para compatibilidad
+        async get(name) {
           return cookieStore.get(name)?.value
         },
-        set(name, value, options) {
+        async set(name, value, options) {
           try {
-            cookieStore.set({ name, value, ...options })
+            await cookieStore.set({ name, value, ...options })
           } catch (error) {
-            // The `set` method was called from a Server Component.
-            // This can be ignored if you have middleware refreshing
-            // user sessions.
+            // Se ignora el error en Server Components
           }
         },
-        remove(name, options) {
+        async remove(name, options) {
           try {
-            cookieStore.set({ name, value: '', ...options })
+            await cookieStore.set({ name, value: '', ...options })
           } catch (error) {
-            // The `delete` method was called from a Server Component.
-            // This can be ignored if you have middleware refreshing
-            // user sessions.
+            // Se ignora el error en Server Components
           }
         },
       },
